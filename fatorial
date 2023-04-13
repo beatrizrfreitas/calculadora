@@ -1,0 +1,18 @@
+# Loop que recebe os minutos atuais do usuário e verifica se é um número inteiro entre 0 e 60
+while True:
+    try:
+        minutos = int(input("Digite os minutos atuais (0 a 60): "))
+        if minutos < 0 or minutos > 60:
+            raise ValueError
+        break
+    except ValueError:
+        print("Entrada inválida. Digite um número inteiro entre 0 e 60.")
+
+# Calcula o fatorial dos minutos usando um loop
+fatorial = 1
+for i in range(1, minutos + 1):
+    fatorial *= i
+
+# Concatena a palavra "LIBERDADE" com o fatorial calculado e exibe a senha na tela
+senha = "LIBERDADE" + str(fatorial)
+print("Senha necessária para desbloqueio:", senha)
