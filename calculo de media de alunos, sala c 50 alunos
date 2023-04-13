@@ -1,0 +1,48 @@
+# Cálculo de média para turma de 50 alunos
+
+notas_impares = []
+notas_pares = []
+
+# Digitação das notas dos alunos ímpares
+print("VOCÊ ESTÁ DIGITANDO AS NOTAS DOS ALUNOS ÍMPARES")
+for i in range(1, 50, 2):
+    while True:
+        try:
+            nota = float(input(f"INSIRA A NOTA DO ALUNO DE NÚMERO {i}: "))
+            if nota < 0 or nota > 10:
+                print("NOTA INVÁLIDA. A NOTA DEVE SER UM NÚMERO ENTRE 0 E 10.")
+                continue
+            notas_impares.append(nota)
+            break
+        except ValueError:
+            print("NOTA INVÁLIDA. POR FAVOR, INSIRA UM NÚMERO.")
+
+# Digitação das notas dos alunos pares
+print("VOCÊ ESTÁ DIGITANDO AS NOTAS DOS ALUNOS PARES")
+for i in range(2, 51, 2):
+    while True:
+        try:
+            nota = float(input(f"INSIRA A NOTA DO ALUNO DE NÚMERO {i}: "))
+            if nota < 0 or nota > 10:
+                print("NOTA INVÁLIDA. A NOTA DEVE SER UM NÚMERO ENTRE 0 E 10.")
+                continue
+            notas_pares.append(nota)
+            break
+        except ValueError:
+            print("NOTA INVÁLIDA. POR FAVOR, INSIRA UM NÚMERO.")
+
+# Cálculo das médias
+media_impares = sum(notas_impares) / len(notas_impares)
+media_pares = sum(notas_pares) / len(notas_pares)
+
+# Impressão das médias
+print(f"A MÉDIA DA TURMA DOS ALUNOS ÍMPARES É: {media_impares:.2f}")
+print(f"A MÉDIA DA TURMA DOS ALUNOS PARES É: {media_pares:.2f}")
+
+# Verificação da maior média
+if media_impares > media_pares:
+    print(f"A TURMA DOS ALUNOS ÍMPARES OBTEVE A MAIOR MÉDIA SENDO {media_impares:.2f} A MÉDIA")
+elif media_pares > media_impares:
+    print(f'A TURMA DOS ALUNOS PARES OBTEVE A MAIOR MÉDIA SENDO {media_pares:.2f} A MÉDIA')
+else:
+    print(f"AS DUAS TURMAS OBTIVERAM A MESMA MÉDIA SENDO {media_impares:.2f} A MEDIA")
