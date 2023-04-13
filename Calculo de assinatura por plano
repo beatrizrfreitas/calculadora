@@ -1,0 +1,30 @@
+while True:
+    assinatura = input("Qual a sua assinatura? ")
+    if assinatura in ["basic", "silver", "gold", "platinum"]:
+        break
+    else:
+        print("Assinatura inválida. Escolha entre: basic, silver, gold ou platinum.")
+
+# Loop para solicitar o faturamento até que seja um número válido
+while True:
+    try:
+        faturamento = float(input("Qual o seu faturamento? "))
+        if faturamento < 0:
+            raise ValueError
+        break
+    except ValueError:
+        print("Faturamento inválido. Insira um número maior ou igual a zero.")
+
+# Calcula o bônus de acordo com o tipo de assinatura
+if assinatura == "basic":
+    bonus = faturamento * 0.3
+    print(f"O valor do bônus a ser pago é de {bonus}")
+elif assinatura == "silver":
+    bonus = faturamento * 0.2
+    print(f"O valor do bônus a ser pago é de {bonus}")
+elif assinatura == "gold":
+    bonus = faturamento * 0.1
+    print(f"O valor do bônus a ser pago é de {bonus}")
+elif assinatura == "platinum":
+    bonus = faturamento * 0.05
+    print(f"O valor do bônus a ser pago é de {bonus}")
