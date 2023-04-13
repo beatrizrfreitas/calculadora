@@ -1,0 +1,19 @@
+
+#De acordo com o ultimo numero da placa escrever quando é o rodizio
+
+numero= int(input("Digite o ultimo da sua placa:"))
+
+#Desvio encadeado
+if numero == 1 or numero == 2:
+    print("O rodizio será Segunda-feira ");
+elif numero == 3 or numero == 4:
+     print("O rodizio será Terça-feira ");
+elif numero == 5 or numero == 6:
+     print("O rodizio será Quarta-feira ");
+elif numero == 7 or numero == 8:
+     print("O rodizio será Quinta-feira ");
+elif numero == 9 or numero == 0:
+     print("O rodizio será Sexta-feira ");
+else:
+     print("Operador inválido")
+
